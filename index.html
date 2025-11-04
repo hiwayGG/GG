@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เว็บค้นหาด้วย Google จริง</title>
+
+  <!-- ✅ ฝัง Google Programmable Search Engine -->
+  <script async src="https://cse.google.com/cse.js?cx=09b6b90bbfe584a24"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #f1f3f6;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+      background: #ffffff;
+      padding: 20px 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: #3f51b5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .box {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.07);
+      padding: 30px;
+      margin-bottom: 25px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+      font-size: 14px;
+    }
+    #manualSearch {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 15px;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">🔍 Search Engine</div>
+  </header>
+
+  <div class="container">
+
+    <div class="box">
+      <h2>ค้นหาข้อมูล</h2>
+      <p>ค้นหาข้อมูลทั้งหมดผ่าน Google แบบเรียลไทม์ ใช้งานได้จริง</p>
+
+      <!-- ✅ ช่องค้นหาที่เราพิมพ์เองแล้วกด Enter เพื่อค้นหา -->
+      <input
+        id="manualSearch"
+        type="text"
+        placeholder="พิมพ์คำค้นที่นี่..."
+        onkeypress="if(event.key==='Enter'){document.querySelector('input.gsc-input').value=this.value;document.querySelector('button.gsc-search-button').click();}"
+      >
+
+      <!-- ✅ ช่องค้นหา Google -->
+      <div class="gcse-search"></div>
+    </div>
+
+    <div class="box">
+      <h3>ผลการค้นหา</h3>
+      <div class="gcse-searchresults"></div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 - ระบบค้นหาแบบ Google ฝังในเว็บ | ทำโดย AI
+  </footer>
+
+</body>
+</html>
